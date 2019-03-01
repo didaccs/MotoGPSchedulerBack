@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MotoGPSchedulerApi.Extensions;
+using MotoGPSchedulerApi.Repository;
 
 namespace MotoGPSchedulerApi
 {
@@ -26,6 +28,8 @@ namespace MotoGPSchedulerApi
         {
             services.ConfigureCors();
             services.AddMvc();
+            services.AddDbContext<ApplicationContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

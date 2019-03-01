@@ -4,12 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MotoGPSchedulerApi.Models
 {
-    public class Event
+    public class Event: BaseModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
         public DateTime Date { get; set; }
 
         [Required]
