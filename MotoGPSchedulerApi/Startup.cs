@@ -28,7 +28,11 @@ namespace MotoGPSchedulerApi
         {
             services.ConfigureCors();
             services.AddMvc();
-            services.AddDbContext<ApplicationContext>();
+
+            // Add DbContext using SQL Server Provider
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MotoGpDatabase")));
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
 
@@ -39,6 +43,7 @@ namespace MotoGPSchedulerApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseHttpsRedirection();
             app.UseCors("CorsPolicy");
             app.UseMvc();
         }

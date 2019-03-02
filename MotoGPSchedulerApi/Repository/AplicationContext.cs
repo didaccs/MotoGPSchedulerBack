@@ -11,15 +11,10 @@ namespace MotoGPSchedulerApi.Repository
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
-        public DbSet<Circuit> Circuits { get; set; }
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Event> Events { get; set; }
-        public DbSet<Record> Records { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite(@"DataSource=MotoGpSchedule.db;");
-        }
+        //public DbSet<Circuit> Circuits { get; set; }
+        //public DbSet<Country> Countries { get; set; }
+        //public DbSet<Event> Events { get; set; }
+        //public DbSet<Record> Records { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

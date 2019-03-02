@@ -11,7 +11,10 @@ namespace MotoGPSchedulerApi.Models
         public float Length { get; set; }
 
         [Required]
-        public int Turns { get; set; }
+        public int TurnsLeft { get; set; }
+
+        [Required]
+        public int TurnsRight { get; set; }
 
         [Required]
         public float Width { get; set; }
