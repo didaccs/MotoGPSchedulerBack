@@ -23,8 +23,8 @@ namespace MotoGPSchedulerApi.Models
         public int StraightLong { get; set; }
 
         [Required]
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
 
-        public Record LastRecord { get; set; }
+        public virtual Record LastRecord { get; set; }
     }
 }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoGPSchedulerApi", "MotoGPSchedulerApi\MotoGPSchedulerApi.csproj", "{15A3AD5F-81C3-4189-991F-128E98C381AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotoGPSchedulerApi", "MotoGPSchedulerApi\MotoGPSchedulerApi.csproj", "{15A3AD5F-81C3-4189-991F-128E98C381AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotoGpSchedulerApiTest", "MotoGpSchedulerApiTest\MotoGpSchedulerApiTest.csproj", "{AB2FDE21-430B-4C7E-82E4-CDF4F2A58FE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{15A3AD5F-81C3-4189-991F-128E98C381AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A3AD5F-81C3-4189-991F-128E98C381AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A3AD5F-81C3-4189-991F-128E98C381AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2FDE21-430B-4C7E-82E4-CDF4F2A58FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2FDE21-430B-4C7E-82E4-CDF4F2A58FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2FDE21-430B-4C7E-82E4-CDF4F2A58FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2FDE21-430B-4C7E-82E4-CDF4F2A58FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

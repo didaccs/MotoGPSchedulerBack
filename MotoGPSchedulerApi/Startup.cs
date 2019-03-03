@@ -31,7 +31,9 @@ namespace MotoGPSchedulerApi
 
             // Add DbContext using SQL Server Provider
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MotoGpDatabase")));
+                options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(Configuration.GetConnectionString("MotoGpDatabase")));
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }

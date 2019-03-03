@@ -28,7 +28,7 @@ La información que debe mostrar el detalle de un evento es:
 ## Tecnologias utilizadas
 
 * Web API Net Core 2.2
-* EF Core 2.2
+* EF Core 2.2 + Lazy load
 * Repositorio de acceso a base de datos genèrico
 * Code first + Migrations
 

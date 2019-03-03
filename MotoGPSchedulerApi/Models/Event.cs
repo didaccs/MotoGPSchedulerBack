@@ -11,6 +11,6 @@ namespace MotoGPSchedulerApi.Models
         [Required]
         public string Name { get; set; }
 
-        public Circuit Circuit { get; set; }
+        public virtual Circuit Circuit { get; set; }
     }
 }
