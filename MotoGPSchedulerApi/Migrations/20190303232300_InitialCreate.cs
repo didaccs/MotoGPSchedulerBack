@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MotoGPSchedulerApi.Migrations
 {
@@ -13,7 +13,7 @@ namespace MotoGPSchedulerApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -26,9 +26,9 @@ namespace MotoGPSchedulerApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Pilot = table.Column<string>(nullable: false),
-                    Time = table.Column<TimeSpan>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Time = table.Column<TimeSpan>(nullable: false),
+                    Pilot = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,14 +40,16 @@ namespace MotoGPSchedulerApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    CountryId = table.Column<long>(nullable: false),
-                    LastRecordId = table.Column<long>(nullable: true),
-                    Length = table.Column<float>(nullable: false),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false),
+                    Length = table.Column<float>(nullable: false),
+                    TurnsLeft = table.Column<int>(nullable: false),
+                    TurnsRight = table.Column<int>(nullable: false),
+                    Width = table.Column<float>(nullable: false),
                     StraightLong = table.Column<int>(nullable: false),
-                    Turns = table.Column<int>(nullable: false),
-                    Width = table.Column<float>(nullable: false)
+                    ImageName = table.Column<string>(nullable: false),
+                    CountryId = table.Column<long>(nullable: false),
+                    LastRecordId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -71,10 +73,10 @@ namespace MotoGPSchedulerApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    CircuitId = table.Column<long>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Date = table.Column<DateTime>(nullable: false),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
+                    CircuitId = table.Column<long>(nullable: true)
                 },
                 constraints: table =>
                 {

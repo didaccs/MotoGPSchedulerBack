@@ -23,6 +23,9 @@ namespace MotoGPSchedulerApi.Models
         public int StraightLong { get; set; }
 
         [Required]
+        public string ImageName { get; set; }
+
+        [Required]
         public virtual Country Country { get; set; }
 
         public virtual Record LastRecord { get; set; }
