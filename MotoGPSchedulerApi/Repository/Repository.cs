@@ -10,8 +10,7 @@ namespace MotoGPSchedulerApi.Repository
     {
         private readonly ApplicationContext context;
         private DbSet<T> entities;
-        string errorMessage = string.Empty;
-
+        
         public Repository(ApplicationContext context)
         {
             this.context = context;

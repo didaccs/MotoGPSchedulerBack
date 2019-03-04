@@ -7,5 +7,8 @@ namespace MotoGPSchedulerApi.Models
     {
         [Required]
         public String Name { get; set; }
+
+        [Required]
+        public String IsoCode { get; set; }
     }
 }

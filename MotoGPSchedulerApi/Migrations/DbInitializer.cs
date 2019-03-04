@@ -22,11 +22,37 @@ namespace MotoGPSchedulerApi.Migrations
             
             if (repoEvent.GetAll().Any())
             {
-                return;   // DB has been seeded
+                return;
             }
+            
+            foreach (Country c in GetCountries())
+            {
+                repoCountry.Insert(c);
+            }
+            List<Country> countries = repoCountry.GetAll().ToList();
 
+            foreach (Record c in GetRecords())
+            {
+                repoRecord.Insert(c);
+            }
+            List<Record> records = repoRecord.GetAll().ToList();
 
-            List<Country> countries = new List<Country>()
+            foreach (Circuit c in GetCircuits(countries, records))
+            {
+                repoCircuit.Insert(c);
+            }
+            List<Circuit> circuits = repoCircuit.GetAll().ToList();
+
+            foreach (Event c in GetEvents(circuits))
+            {
+                repoEvent.Insert(c);
+            }
+            List<Event> events = repoEvent.GetAll().ToList();
+        }
+
+        public static List<Country> GetCountries()
+        {
+            return new List<Country>()
             {
                 new Country(){Name = "Spain"},
                 new Country(){Name = "Malaysia"},
@@ -39,14 +65,11 @@ namespace MotoGPSchedulerApi.Migrations
                 new Country(){Name = "República checa"},
                 new Country(){Name = "Austria"}
             };
+        }
 
-            foreach (Country c in countries)
-            {
-                repoCountry.Insert(c);
-            }
-            countries = repoCountry.GetAll().ToList();
-
-            List<Record> records = new List<Record>()
+        public static List<Record> GetRecords()
+        {
+            return new List<Record>()
             {
                 new Record(){
                     Pilot = "Jorge Lorenzo",
@@ -93,14 +116,11 @@ namespace MotoGPSchedulerApi.Migrations
                     Time = new TimeSpan(0, 0, 1, 24, 277)
                 },
             };
+        }
 
-            foreach (Record c in records)
-            {
-                repoRecord.Insert(c);
-            }
-            records = repoRecord.GetAll().ToList();
-
-            List<Circuit> circuits = new List<Circuit>()
+        public static List<Circuit> GetCircuits(List<Country> countries, List<Record> records)
+        {
+            return new List<Circuit>()
             {
                 new Circuit()
                 {
@@ -247,14 +267,11 @@ namespace MotoGPSchedulerApi.Migrations
                     ImageName="spielberg.png"
                 },
             };
+        }
 
-            foreach (Circuit c in circuits)
-            {
-                repoCircuit.Insert(c);
-            }
-            circuits = repoCircuit.GetAll().ToList();
-
-            List<Event> events = new List<Event>()
+        public static List<Event> GetEvents(List<Circuit> circuits)
+        {
+            return new List<Event>()
             {
                 new Event()
                 {
@@ -329,12 +346,6 @@ namespace MotoGPSchedulerApi.Migrations
                     Name = "World Motorrad Grand Prix von Österreich"
                 },
             };
-
-            foreach (Event c in events)
-            {
-                repoEvent.Insert(c);
-            }
-            events = repoEvent.GetAll().ToList();
         }
     }
 }
