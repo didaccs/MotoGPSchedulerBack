@@ -54,16 +54,16 @@ namespace MotoGPSchedulerApi.Migrations
         {
             return new List<Country>()
             {
-                new Country(){Name = "Spain"},
-                new Country(){Name = "Malaysia"},
-                new Country(){Name = "Qatar"},
-                new Country(){Name = "Argentina"},
-                new Country(){Name = "Estados unidos"},
-                new Country(){Name = "Francia"},
-                new Country(){Name = "Italia"},
-                new Country(){Name = "Alemania"},
-                new Country(){Name = "República checa"},
-                new Country(){Name = "Austria"}
+                new Country(){Name = "España", IsoCode = "es"},
+                new Country(){Name = "Malaysia", IsoCode = "my"},
+                new Country(){Name = "Qatar", IsoCode ="qa"},
+                new Country(){Name = "Argentina", IsoCode ="ar"},
+                new Country(){Name = "Estados unidos", IsoCode = "us"},
+                new Country(){Name = "Francia", IsoCode ="fr"},
+                new Country(){Name = "Italia", IsoCode="it"},
+                new Country(){Name = "Alemania", IsoCode ="de"},
+                new Country(){Name = "República checa", IsoCode="cz"},
+                new Country(){Name = "Austria", IsoCode="at"}
             };
         }
 
@@ -124,7 +124,7 @@ namespace MotoGPSchedulerApi.Migrations
             {
                 new Circuit()
                 {
-                    Country = countries.First(c=> c.Name == "Spain"),
+                    Country = countries.First(c=> c.Name == "España"),
                     Name = "Ricardo Tormo",
                     Length = 4000,
                     TurnsLeft = 9,
@@ -184,7 +184,7 @@ namespace MotoGPSchedulerApi.Migrations
                 },
                 new Circuit()
                 {
-                    Country = countries.First(c=> c.Name == "Spain"),
+                    Country = countries.First(c=> c.Name == "España"),
                     Name = "Circuito de Jerez - Angel Nieto",
                     Length = 4400,
                     TurnsLeft = 5,
@@ -220,7 +220,7 @@ namespace MotoGPSchedulerApi.Migrations
                 },
                 new Circuit()
                 {
-                    Country = countries.First(c=> c.Name == "Spain"),
+                    Country = countries.First(c=> c.Name == "España"),
                     Name = "Circuit de Barcelona-Catalunya",
                     Length = 4700,
                     TurnsLeft = 5,
